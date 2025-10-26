@@ -8,6 +8,12 @@ def mensagem(titulo):
     print(f"{titulo}")
     print("=" * len(titulo))
 
+def extrato(saldo):
+    mensagem("Sistema de Caixa Eletrônico (ATM)")
+    mensagem("EXTRATO DA CONTA")
+    print("Saldo: ",saldo)
+
+
 def menuSistemaDeCaixa():
     print("1: Verificar extrado da conta")
     print("2: Realizar saque")
@@ -48,13 +54,6 @@ def login(contTentativadaSenha, saldoConta):
                 break
             else:
                 print("opção incorreta")
-
-
-def extrato(saldo):
-    mensagem("Sistema de Caixa Eletrônico (ATM)")
-    mensagem("EXTRATO DA CONTA")
-    print("Saldo: ",saldo)
-
 
 
 login(contTentativadaSenha, saldoConta)
