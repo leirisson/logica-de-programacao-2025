@@ -1,0 +1,33 @@
+Sistema de Caixa Eletrônico (ATM)
+Objetivo: Simular as operações básicas de um caixa eletrônico.
+
+Fluxo Principal:
+
+Usuário insere cartão e PIN
+
+Seleciona operação
+Sistema processa transação
+Retorna ao menu ou finaliza
+=========================================
+Exercício 1: Verificação de PIN
+Solicita número do cartão e PIN
+Verifica se PIN corresponde ao cartão
+Subtarefas:
+a. Se PIN correto → mostra menu principal
+b. Se PIN errado → permite 2 tentativas
+c. Após 3 erros → bloqueia cartão
+==========================================
+Exercício 2: Consulta de Saldo
+Usuário seleciona "Consulta de Saldo"
+Subtarefas:
+a. Sistema recupera saldo da conta
+b. Exibe valor atual
+c. Oferece opção de extrato ou retorno
+===========================================
+Exercício 3: Saque
+Usuário seleciona "Saque" e informa valor
+Subtarefas:
+a. Verifica se valor é múltiplo de 10
+b. Confirma saldo suficiente
+c. Se aprovado → atualiza saldo → entrega notas
+d. Se recusado → mostra motivo
