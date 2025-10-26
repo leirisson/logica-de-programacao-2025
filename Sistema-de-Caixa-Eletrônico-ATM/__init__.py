@@ -58,3 +58,5 @@ def login(contTentativadaSenha, saldoConta):
 
 login(contTentativadaSenha, saldoConta)
 
+nome = "LERISDSON"
+nome.lo
