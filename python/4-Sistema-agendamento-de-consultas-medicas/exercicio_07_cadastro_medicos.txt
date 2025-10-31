@@ -1,0 +1,42 @@
+SISTEMA: Agendamento de Consultas Médicas
+EXERCÍCIO: 7 - Cadastro de Médicos
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Implementar cadastro de médicos com validação de CRM.
+
+ENTIDADES ENVOLVIDAS:
+- Médico: id, nome, especialidade, CRM, telefone
+
+OBJETIVO:
+Cadastrar médicos validando CRM e especialidade.
+
+FLUXO PRINCIPAL:
+1. Solicitar dados: nome, especialidade, CRM, telefone
+2. Validar formato do CRM
+3. Verificar se CRM já está cadastrado
+4. Validar especialidade contra lista pré-definida
+5. Cadastrar se todos os dados forem válidos
+
+SUBTAREFAS:
+- Validar CRM (formato CRM-XXXXX/UF)
+- Verificar duplicidade de CRM
+- Validar especialidade em lista pré-definida
+- Gerar ID automático
+
+MEMÓRIA:
+medicos = []  # Lista de médicos
+especialidades = ["Cardiologia", "Dermatologia", "Pediatria", "Ortopedia", "Clínico Geral"]
+proximo_id = 1
+
+VALIDAÇÕES:
+- CRM: formato específico e único
+- Especialidade: deve estar na lista
+- Nome: mínimo 5 caracteres
+- Telefone: formato válido
+
+MENSAGENS:
+- "Médico cadastrado com sucesso!"
+- "CRM já cadastrado no sistema"
+- "Especialidade inválida. Opções: {lista}"
+- "Formato de CRM inválido. Use: CRM-XXXXX/UF"

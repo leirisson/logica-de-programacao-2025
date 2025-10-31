@@ -1,0 +1,43 @@
+SISTEMA: Controle Financeiro Pessoal
+EXERCÍCIO: 11 - Registrar Transação
+DIFICULDADE: Iniciante
+
+DESCRIÇÃO:
+Implementar registro de transações financeiras (receitas/despesas).
+
+ENTIDADES ENVOLVIDAS:
+- Transacao: id, tipo, categoria, valor, data, descrição
+
+OBJETIVO:
+Registrar transações e atualizar saldo automaticamente.
+
+FLUXO PRINCIPAL:
+1. Solicitar: tipo (receita/despesa), categoria, valor, descrição
+2. Validar dados
+3. Registrar transação com data atual
+4. Atualizar saldo total
+
+SUBTAREFAS:
+- Definir tipo: receita (+) ou despesa (-)
+- Associar categoria pré-definida
+- Validar valor positivo
+- Gerar data automaticamente
+- Calcular novo saldo
+
+MEMÓRIA:
+transacoes = []  # Histórico de transações
+categorias = ["Alimentação", "Transporte", "Saúde", "Educação", "Lazer", "Salário", "Investimentos"]
+saldo = 0.0
+proximo_id = 1
+
+VALIDAÇÕES:
+- Valor deve ser número positivo
+- Categoria deve ser válida
+- Tipo deve ser "receita" ou "despesa"
+- Descrição não pode ser vazia
+
+MENSAGENS:
+- "Transação registrada com sucesso!"
+- "Novo saldo: R$ {saldo}"
+- "Valor inválido (deve ser positivo)"
+- "Categoria inválida"

@@ -1,0 +1,53 @@
+SISTEMA: Gerenciamento de Tarefas
+EXERCÍCIO: 17 - Listar Tarefas por Prioridade
+DIFICULDADE: Iniciante
+
+DESCRIÇÃO:
+Implementar listagem de tarefas ordenadas por prioridade.
+
+ENTIDADES ENVOLVIDAS:
+- Tarefa: id, título, prioridade, status, data_vencimento
+
+OBJETIVO:
+Exibir tarefas agrupadas e ordenadas por prioridade.
+
+FLUXO PRINCIPAL:
+1. Ordenar tarefas: alta → média → baixa
+2. Destacar tarefas vencidas
+3. Agrupar por status
+4. Exibir contagem por categoria
+5. Mostrar lista formatada
+
+SUBTAREFAS:
+- Ordenar por prioridade (custom sort)
+- Verificar vencimento vs data atual
+- Agrupar por status dentro de cada prioridade
+- Calcular estatísticas
+- Formatar exibição com emojis
+
+MEMÓRIA:
+tarefas = []  # Lista de tarefas
+
+VALIDAÇÕES:
+- Tarefas existentes
+- Datas válidas
+
+MENSAGENS:
+- "📋 TODAS AS TAREFAS"
+- "🚨 TAREFAS VENCIDAS: {quantidade}"
+- "✅ Concluídas: {quantidade}"
+- "🔄 Em andamento: {quantidade}"
+- "⏳ Pendentes: {quantidade}"
+
+EXIBIÇÃO:
+🔥 PRIORIDADE ALTA
+[ ] 🚨 Revisar relatório (VENCIDA)
+[ ] 📊 Preparar apresentação
+
+💼 PRIORIDADE MÉDIA
+[ ] Responder emails
+[ ] Reunião com equipe
+
+📚 PRIORIDADE BAIXA
+[✅] Organizar arquivos
+[ ] Ler artigos

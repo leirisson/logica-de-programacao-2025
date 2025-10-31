@@ -1,0 +1,41 @@
+SISTEMA: Controle de Estoque de Livros
+EXERCÍCIO: 1 - Cadastro de Livros
+DIFICULDADE: Iniciante
+
+DESCRIÇÃO:
+Implementar a funcionalidade de cadastro de novos livros no sistema de estoque.
+
+ENTIDADES ENVOLVIDAS:
+- Livro: id, título, autor, ISBN, preço, quantidade_estoque
+
+OBJETIVO:
+Cadastrar novo livro verificando se o ISBN já existe no sistema.
+
+FLUXO PRINCIPAL:
+1. Solicitar dados: título, autor, ISBN, preço, quantidade
+2. Verificar se ISBN já existe na lista de livros
+3. Se não existir: adicionar livro com ID sequencial
+4. Se existir: exibir mensagem "ISBN já cadastrado"
+5. Confirmar cadastro bem-sucedido
+
+SUBTAREFAS:
+- Gerar ID automático sequencial
+- Validar preço (não pode ser negativo)
+- Validar quantidade (não pode ser negativa)
+- Verificar duplicidade de ISBN
+
+MEMÓRIA:
+livros = []  # Lista para armazenar os livros
+proximo_id = 1  # Contador para IDs
+
+VALIDAÇÕES:
+- Campos obrigatórios: título, autor, ISBN
+- ISBN deve ter pelo menos 10 caracteres
+- Preço deve ser maior que zero
+- Quantidade inicial não pode ser negativa
+
+MENSAGENS:
+- "Livro cadastrado com sucesso! ID: {id}"
+- "Erro: ISBN já cadastrado"
+- "Erro: Preço deve ser maior que zero"
+- "Erro: Preencha todos os campos obrigatórios"

@@ -1,0 +1,43 @@
+SISTEMA: Controle de Estoque de Livros
+EXERCÍCIO: 5 - Relatório de Estoque Baixo
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Gerar relatório de livros com estoque abaixo do nível mínimo.
+
+ENTIDADES ENVOLVIDAS:
+- Livro: id, título, autor, ISBN, quantidade_estoque
+
+OBJETIVO:
+Identificar livros que necessitam de reposição urgente.
+
+FLUXO PRINCIPAL:
+1. Definir nível mínimo de estoque (ex: 5 unidades)
+2. Filtrar livros com quantidade abaixo do mínimo
+3. Ordenar por quantidade (menor primeiro)
+4. Exibir lista com informações relevantes
+
+SUBTAREFAS:
+- Configurar nível de alerta
+- Filtrar e ordenar livros
+- Calcular quantidade necessária para reposição
+- Destacar situações críticas (estoque zero)
+
+MEMÓRIA:
+livros = []  # Lista de livros
+nivel_alerta = 5  # Nível mínimo de estoque
+
+VALIDAÇÕES:
+- Lista não vazia
+- Quantidades válidas
+
+MENSAGENS:
+- "ALERTA: {quantidade} livros com estoque baixo"
+- "✅ Estoque dentro do normal"
+- "🚨 CRÍTICO: {titulo} com estoque ZERO"
+- "Reposição recomendada: {quantidade} unidades"
+
+EXIBIÇÃO:
+🚨 ALERTA DE ESTOQUE BAIXO 🚨
+1. Dom Casmurro - Estoque: 2 (necessário: +8)
+2. O Cortiço - Estoque: 0 (URGENTE: +10)

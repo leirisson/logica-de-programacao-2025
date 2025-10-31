@@ -1,0 +1,47 @@
+SISTEMA: Gerenciamento de Tarefas
+EXERCÍCIO: 18 - Atualizar Status da Tarefa
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Implementar alteração de status das tarefas com validação.
+
+ENTIDADES ENVOLVIDAS:
+- Tarefa: id, título, status, data_conclusao
+
+OBJETIVO:
+Permitir transição controlada entre status das tarefas.
+
+FLUXO PRINCIPAL:
+1. Listar tarefas com IDs
+2. Solicitar ID da tarefa para atualizar
+3. Mostrar status atual
+4. Solicitar novo status
+5. Validar transição permitida
+6. Atualizar status e data se necessário
+
+SUBTAREFAS:
+- Validar ID da tarefa
+- Validar transição de status
+- Registrar data de conclusão quando finalizada
+- Validar que só tarefas "em andamento" podem ser concluídas
+- Impedir retrocesso de status
+
+MEMÓRIA:
+tarefas = []  # Lista de tarefas
+FLUXO_STATUS = {
+    "pendente": ["em andamento"],
+    "em andamento": ["concluída", "pendente"],
+    "concluída": []  # Não pode mudar depois de concluída
+}
+
+VALIDAÇÕES:
+- Tarefa deve existir
+- Transição deve ser permitida no fluxo
+- Não pode alterar tarefas concluídas
+
+MENSAGENS:
+- "Status atualizado com sucesso!"
+- "Tarefa não encontrada"
+- "Transição não permitida: {atual} → {novo}"
+- "Tarefa concluída em {data}"
+- "Não é possível alterar tarefas concluídas"

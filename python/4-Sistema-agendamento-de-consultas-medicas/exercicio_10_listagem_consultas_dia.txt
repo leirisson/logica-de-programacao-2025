@@ -1,0 +1,50 @@
+SISTEMA: Agendamento de Consultas Médicas
+EXERCÍCIO: 10 - Listagem de Consultas do Dia
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Implementar relatório diário de consultas agendadas.
+
+ENTIDADES ENVOLVIDAS:
+- Consulta: id, id_paciente, id_medico, data, hora, status
+- Paciente: nome
+- Médico: nome, especialidade
+
+OBJETIVO:
+Exibir todas as consultas do dia atual ordenadas por horário.
+
+FLUXO PRINCIPAL:
+1. Obter data atual
+2. Filtrar consultas pela data
+3. Ordenar por horário
+4. Exibir lista formatada
+5. Destacar consultas em atraso
+
+SUBTAREFAS:
+- Filtrar por data atual
+- Ordenar por horário crescente
+- Calcular atraso (horário atual vs horário consulta)
+- Formatar exibição com cores/destaques
+- Agrupar por status
+
+MEMÓRIA:
+consultas = []  # Lista de consultas
+pacientes = []  # Lista de pacientes
+medicos = []  # Lista de médicos
+
+VALIDAÇÕES:
+- Data válida
+- Consultas existentes
+
+MENSAGENS:
+- "📅 CONSULTAS DE HOJE - {data}"
+- "⏰ PRÓXIMA CONSULTA: {hora} - {paciente}"
+- "🚨 ATRASO: {consulta}"
+
+EXIBIÇÃO:
+🏥 AGENDA DO DIA {data} 🏥
+
+08:00 ✅ - João Silva - Dr. Carlos (Cardiologia)
+09:30 ⏳ - Maria Santos - Dra. Ana (Pediatria) [EM ANDAMENTO]
+10:15 🚨 - Pedro Costa - Dr. Roberto (Dermatologia) [ATRASADO]
+14:00 🔵 - Ana Oliveira - Dra. Juliana (Ortopedia)

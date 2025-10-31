@@ -1,0 +1,44 @@
+SISTEMA: Agendamento de Consultas Médicas
+EXERCÍCIO: 6 - Cadastro de Pacientes
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Implementar cadastro de pacientes com validação de dados.
+
+ENTIDADES ENVOLVIDAS:
+- Paciente: id, nome, telefone, email, data_nascimento, cpf
+
+OBJETIVO:
+Cadastrar novos pacientes validando CPF e dados de contato.
+
+FLUXO PRINCIPAL:
+1. Solicitar dados: nome, telefone, email, data_nascimento, CPF
+2. Validar formato do telefone e email
+3. Verificar se CPF já está cadastrado
+4. Se válido: cadastrar paciente
+5. Se inválido: exibir erro específico
+
+SUBTAREFAS:
+- Validar formato de telefone (XX) XXXXX-XXXX
+- Validar formato de email (@ e .)
+- Validar CPF (11 dígitos numéricos)
+- Verificar duplicidade de CPF
+- Calcular idade a partir da data de nascimento
+
+MEMÓRIA:
+pacientes = []  # Lista de pacientes
+proximo_id = 1
+
+VALIDAÇÕES:
+- Nome: mínimo 3 caracteres
+- Telefone: formato específico
+- Email: deve conter @ e .
+- CPF: 11 dígitos, não duplicado
+- Data nascimento: não pode ser futura
+
+MENSAGENS:
+- "Paciente cadastrado com sucesso!"
+- "Erro: CPF já cadastrado"
+- "Telefone em formato inválido"
+- "Email em formato inválido"
+- "CPF deve conter 11 dígitos"

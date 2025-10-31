@@ -1,0 +1,42 @@
+SISTEMA: Controle de Estoque de Livros
+EXERCÍCIO: 4 - Reposição de Estoque
+DIFICULDADE: Iniciante
+
+DESCRIÇÃO:
+Implementar sistema de reposição de estoque para livros existentes.
+
+ENTIDADES ENVOLVIDAS:
+- Livro: id, título, ISBN, quantidade_estoque
+- Reposicao: id, id_livro, quantidade, data
+
+OBJETIVO:
+Adicionar unidades ao estoque de livros existentes.
+
+FLUXO PRINCIPAL:
+1. Buscar livro por ISBN
+2. Solicitar quantidade para repor
+3. Validar quantidade positiva
+4. Atualizar estoque do livro
+5. Registrar movimento de reposição
+
+SUBTAREFAS:
+- Localizar livro pelo ISBN
+- Somar quantidade ao estoque atual
+- Registrar data da reposição
+- Confirmar operação
+
+MEMÓRIA:
+livros = []  # Lista de livros
+reposicoes = []  # Histórico de reposições
+proximo_id_reposicao = 1
+
+VALIDAÇÕES:
+- Livro deve existir
+- Quantidade deve ser número positivo inteiro
+- Não permitir reposição de zero unidades
+
+MENSAGENS:
+- "Estoque reposto com sucesso! Novo estoque: {quantidade}"
+- "Livro não encontrado"
+- "Quantidade inválida para reposição"
+- "Reposição registrada - ID: {id}"

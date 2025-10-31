@@ -1,0 +1,43 @@
+SISTEMA: Controle de Estoque de Livros
+EXERCÍCIO: 3 - Realizar Venda
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Implementar processo de venda com controle de estoque.
+
+ENTIDADES ENVOLVIDAS:
+- Livro: id, título, ISBN, preço, quantidade_estoque
+- Venda: id, id_livro, quantidade, data, valor_total
+
+OBJETIVO:
+Registrar venda validando estoque e atualizando quantidade.
+
+FLUXO PRINCIPAL:
+1. Buscar livro por ISBN
+2. Solicitar quantidade desejada
+3. Verificar estoque disponível
+4. Se disponível: registrar venda e atualizar estoque
+5. Se não disponível: sugerir quantidade disponível
+
+SUBTAREFAS:
+- Calcular valor total da venda
+- Atualizar quantidade em estoque
+- Registrar data da venda
+- Gerar ID sequencial para venda
+
+MEMÓRIA:
+livros = []  # Lista de livros
+vendas = []  # Lista de vendas registradas
+proximo_id_venda = 1
+
+VALIDAÇÕES:
+- Livro deve existir
+- Quantidade deve ser número positivo
+- Estoque deve ser suficiente
+- Não permitir venda de quantidade zero
+
+MENSAGENS:
+- "Venda realizada com sucesso! Total: R$ {total}"
+- "Estoque insuficiente. Disponível: {quantidade}"
+- "Livro não encontrado"
+- "Quantidade inválida"

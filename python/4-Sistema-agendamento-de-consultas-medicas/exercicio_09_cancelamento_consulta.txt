@@ -1,0 +1,42 @@
+SISTEMA: Agendamento de Consultas Médicas
+EXERCÍCIO: 9 - Cancelamento de Consulta
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Implementar sistema de cancelamento de consultas.
+
+ENTIDADES ENVOLVIDAS:
+- Consulta: id, id_paciente, id_medico, data, hora, status
+
+OBJETIVO:
+Permitir cancelamento de consultas com alteração de status.
+
+FLUXO PRINCIPAL:
+1. Buscar consulta por paciente ou data
+2. Exibir consultas encontradas
+3. Selecionar consulta para cancelar
+4. Alterar status para "cancelada"
+5. Confirmar cancelamento
+
+SUBTAREFAS:
+- Buscar consultas por nome do paciente
+- Buscar consultas por data
+- Validar se consulta pode ser cancelada (não pode ser passada)
+- Alterar status sem excluir registro
+- Manter histórico de cancelamentos
+
+MEMÓRIA:
+consultas = []  # Lista de consultas
+STATUS = ["agendada", "realizada", "cancelada"]
+
+VALIDAÇÕES:
+- Consulta deve existir
+- Só pode cancelar consultas futuras
+- Status deve ser "agendada" para cancelar
+
+MENSAGENS:
+- "Consulta cancelada com sucesso"
+- "Não é possível cancelar consultas passadas"
+- "Consulta já foi cancelada anteriormente"
+- "Nenhuma consulta encontrada"
+- "Consulta realizada não pode ser cancelada"

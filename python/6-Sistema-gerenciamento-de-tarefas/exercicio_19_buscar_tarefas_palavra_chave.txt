@@ -1,0 +1,49 @@
+SISTEMA: Gerenciamento de Tarefas
+EXERCÍCIO: 19 - Buscar Tarefas por Palavra-chave
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Implementar sistema de busca por termos no título e descrição.
+
+ENTIDADES ENVOLVIDAS:
+- Tarefa: id, título, descrição, prioridade, status
+
+OBJETIVO:
+Encontrar tarefas específicas através de busca textual.
+
+FLUXO PRINCIPAL:
+1. Solicitar termo de busca
+2. Buscar no título e descrição de todas as tarefas
+3. Exibir resultados com destaque para o termo
+4. Mostrar status e prioridade nos resultados
+5. Indicar quantidade de resultados
+
+SUBTAREFAS:
+- Busca case-insensitive
+- Busca parcial (contém)
+- Destacar termo encontrado nos resultados
+- Ordenar por relevância (título > descrição)
+- Filtrar por status se solicitado
+
+MEMÓRIA:
+tarefas = []  # Lista de tarefas
+
+VALIDAÇÕES:
+- Termo não vazio
+- Tarefas existentes
+
+MENSAGENS:
+- "🔍 RESULTADOS PARA: '{termo}'"
+- "Encontradas {quantidade} tarefas"
+- "Nenhuma tarefa encontrada"
+- "Tente outro termo de busca"
+
+EXIBIÇÃO:
+🔍 BUSCA: "relatório"
+
+1. [ALTA] 📊 Revisar RELATÓRIO financeiro [Pendente]
+   ...encontrado no título
+
+2. [MÉDIA] Preparar apresentação [Em andamento]
+   ...inclui dados do RELATÓRIO trimestral
+   ...encontrado na descrição

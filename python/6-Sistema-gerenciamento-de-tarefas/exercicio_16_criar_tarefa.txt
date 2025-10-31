@@ -1,0 +1,43 @@
+SISTEMA: Gerenciamento de Tarefas
+EXERCÍCIO: 16 - Criar Nova Tarefa
+DIFICULDADE: Iniciante
+
+DESCRIÇÃO:
+Implementar criação de tarefas com validação de dados.
+
+ENTIDADES ENVOLVIDAS:
+- Tarefa: id, título, descrição, prioridade, status, data_criacao, data_vencimento
+
+OBJETIVO:
+Criar tarefas com todos os dados necessários e validações.
+
+FLUXO PRINCIPAL:
+1. Solicitar: título, descrição, prioridade, data_vencimento
+2. Validar dados
+3. Definir status inicial como "pendente"
+4. Gerar data de criação automática
+5. Salvar tarefa
+
+SUBTAREFAS:
+- Validar título não vazio
+- Validar data vencimento (futura)
+- Definir prioridade (alta, média, baixa)
+- Gerar ID automático
+- Data criação = data atual
+
+MEMÓRIA:
+tarefas = []  # Lista de tarefas
+proximo_id = 1
+PRIORIDADES = ["alta", "média", "baixa"]
+STATUS = ["pendente", "em andamento", "concluída"]
+
+VALIDAÇÕES:
+- Título obrigatório
+- Data vencimento deve ser futura
+- Prioridade deve ser válida
+
+MENSAGENS:
+- "Tarefa criada com sucesso! ID: {id}"
+- "Título é obrigatório"
+- "Data de vencimento deve ser futura"
+- "Prioridade inválida. Use: alta, média ou baixa"

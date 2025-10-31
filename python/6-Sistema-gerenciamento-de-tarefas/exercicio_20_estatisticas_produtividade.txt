@@ -1,0 +1,52 @@
+SISTEMA: Gerenciamento de Tarefas
+EXERCÍCIO: 20 - Estatísticas de Produtividade
+DIFICULDADE: Avançado
+
+DESCRIÇÃO:
+Implementar cálculo de métricas de produtividade.
+
+ENTIDADES ENVOLVIDAS:
+- Tarefa: status, data_criacao, data_conclusao, prioridade
+
+OBJETIVO:
+Calcular e exibir estatísticas de desempenho.
+
+FLUXO PRINCIPAL:
+1. Calcular porcentagem de tarefas concluídas
+2. Calcular tempo médio para conclusão
+3. Calcular taxa de tarefas vencidas
+4. Analisar distribuição por prioridade
+5. Gerar relatório consolidado
+
+SUBTAREFAS:
+- Filtrar tarefas concluídas
+- Calcular diferença de datas para tempo médio
+- Identificar tarefas vencidas não concluídas
+- Agrupar por prioridade
+- Calcular percentuais
+
+MEMÓRIA:
+tarefas = []  # Lista de tarefas
+
+VALIDAÇÕES:
+- Tarefas existentes
+- Datas válidas para cálculos
+
+MENSAGENS:
+- "📊 RELATÓRIO DE PRODUTIVIDADE"
+- "🎯 Taxa de conclusão: {percentual}%"
+- "⏱️  Tempo médio: {dias} dias"
+- "🚨 Atrasos: {percentual}%"
+- "📈 Sua produtividade: {avaliacao}"
+
+EXIBIÇÃO:
+📊 ESTATÍSTICAS DE PRODUTIVIDADE
+
+✅ Conclusão: 68% (34/50 tarefas)
+⏱️ Tempo Médio: 5.2 dias por tarefa
+🚨 Atrasos: 12% (6 tarefas)
+🔥 Prioridade Alta: 45% concluídas
+💼 Prioridade Média: 72% concluídas
+📚 Prioridade Baixa: 85% concluídas
+
+📈 AVALIAÇÃO: BOM DESEMPENHO! 🎉

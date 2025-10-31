@@ -1,0 +1,55 @@
+SISTEMA: Controle Financeiro Pessoal
+EXERCÍCIO: 15 - Análise por Categoria
+DIFICULDADE: Avançado
+
+DESCRIÇÃO:
+Implementar análise de gastos por categoria.
+
+ENTIDADES ENVOLVIDAS:
+- Transacao: tipo, categoria, valor, data
+
+OBJETIVO:
+Identificar padrões de gastos e categorias problemáticas.
+
+FLUXO PRINCIPAL:
+1. Agrupar despesas por categoria
+2. Calcular total por categoria
+3. Calcular percentual do orçamento
+4. Ordenar por maior gasto
+5. Identificar categorias com excesso
+
+SUBTAREFAS:
+- Filtrar apenas despesas
+- Agrupar por categoria
+- Calcular totais e percentuais
+- Comparar com orçamento ideal
+- Identificar outliers
+
+MEMÓRIA:
+transacoes = []  # Lista de transações
+orcamento_ideal = {  # Percentuais ideais por categoria
+    "Alimentação": 25,
+    "Transporte": 15,
+    "Moradia": 30,
+    "Lazer": 10,
+    "Saúde": 10,
+    "Educação": 10
+}
+
+VALIDAÇÕES:
+- Existência de despesas
+- Cálculos válidos
+
+MENSAGENS:
+- "📈 ANÁLISE DE CATEGORIAS"
+- "✅ {categoria}: {percentual}% (dentro do ideal)"
+- "⚠️  {categoria}: {percentual}% (acima do ideal)"
+- "🚨 {categoria}: {percentual}% (MUITO ACIMA)"
+
+EXIBIÇÃO:
+📊 ANÁLISE DE GASTOS POR CATEGORIA
+
+1. 🚨 Alimentação: 40% (ideal: 25%) [+15%]
+2. ⚠️  Transporte: 20% (ideal: 15%) [+5%]
+3. ✅ Moradia: 28% (ideal: 30%) [-2%]
+4. ✅ Lazer: 8% (ideal: 10%) [-2%]

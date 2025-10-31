@@ -1,0 +1,45 @@
+SISTEMA: Controle de Estoque de Livros
+EXERCÍCIO: 2 - Consulta de Estoque
+DIFICULDADE: Iniciante
+
+DESCRIÇÃO:
+Implementar sistema de consulta de livros por título ou ISBN.
+
+ENTIDADES ENVOLVIDAS:
+- Livro: id, título, autor, ISBN, preço, quantidade_estoque
+
+OBJETIVO:
+Permitir busca flexível de livros e exibir informações completas.
+
+FLUXO PRINCIPAL:
+1. Solicitar termo de busca (título ou ISBN)
+2. Buscar em todos os livros
+3. Exibir informações completas dos livros encontrados
+4. Se não encontrar, exibir mensagem apropriada
+
+SUBTAREFAS:
+- Busca parcial no título (case-insensitive)
+- Busca exata no ISBN
+- Exibir todos os livros se termo for vazio
+- Formatar exibição das informações
+
+MEMÓRIA:
+livros = []  # Lista de livros cadastrados
+
+VALIDAÇÕES:
+- Termo de busca deve ser string
+- Tratar busca vazia (listar todos)
+
+MENSAGENS:
+- "Livros encontrados: {quantidade}"
+- "Nenhum livro encontrado para: {termo}"
+- "Estoque: {quantidade} unidades"
+- "Preço: R$ {preço}"
+
+EXIBIÇÃO:
+ID: 1
+Título: Dom Casmurro
+Autor: Machado de Assis
+ISBN: 9788535930001
+Preço: R$ 29.90
+Estoque: 15 unidades

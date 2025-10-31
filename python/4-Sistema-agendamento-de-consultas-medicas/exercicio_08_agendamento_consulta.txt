@@ -1,0 +1,48 @@
+SISTEMA: Agendamento de Consultas Médicas
+EXERCÍCIO: 8 - Agendamento de Consulta
+DIFICULDADE: Avançado
+
+DESCRIÇÃO:
+Implementar sistema de agendamento com verificação de conflitos.
+
+ENTIDADES ENVOLVIDAS:
+- Paciente: id, nome
+- Médico: id, nome, especialidade
+- Consulta: id, id_paciente, id_medico, data, hora, status
+
+OBJETIVO:
+Agendar consultas verificando disponibilidade de médicos.
+
+FLUXO PRINCIPAL:
+1. Selecionar paciente e médico
+2. Escolher data e hora
+3. Verificar conflito de horário
+4. Se disponível: criar agendamento
+5. Se não disponível: sugerir horários alternativos
+
+SUBTAREFAS:
+- Validar data futura
+- Validar horário comercial (8h-18h)
+- Verificar se médico já tem consulta no horário
+- Verificar se paciente já tem consulta no horário
+- Sugerir próximos horários disponíveis
+
+MEMÓRIA:
+consultas = []  # Lista de consultas agendadas
+pacientes = []  # Lista de pacientes
+medicos = []  # Lista de médicos
+proximo_id = 1
+
+VALIDAÇÕES:
+- Data não pode ser no passado
+- Horário dentro do expediente
+- Médico deve existir
+- Paciente deve existir
+- Não pode haver conflito de horário
+
+MENSAGENS:
+- "Consulta agendada com sucesso!"
+- "Conflito de horário: médico já tem consulta"
+- "Horário fora do expediente comercial"
+- "Data inválida (deve ser futura)"
+- "Sugestões de horários disponíveis: {lista}"

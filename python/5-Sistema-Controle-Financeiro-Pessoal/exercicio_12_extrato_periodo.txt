@@ -1,0 +1,52 @@
+SISTEMA: Controle Financeiro Pessoal
+EXERCÍCIO: 12 - Extrato por Período
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Gerar extrato financeiro filtrado por período.
+
+ENTIDADES ENVOLVIDAS:
+- Transacao: id, tipo, categoria, valor, data, descrição
+
+OBJETIVO:
+Exibir transações de um período específico com totais.
+
+FLUXO PRINCIPAL:
+1. Solicitar período (mês/ano ou data inicial-final)
+2. Filtrar transações do período
+3. Calcular totais de receitas e despesas
+4. Exibir extrato detalhado
+5. Mostrar saldo do período
+
+SUBTAREFAS:
+- Filtrar por intervalo de datas
+- Calcular totais por tipo
+- Ordenar por data
+- Formatar moeda brasileira
+- Calcular saldo do período
+
+MEMÓRIA:
+transacoes = []  # Lista de transações
+
+VALIDAÇÕES:
+- Datas válidas
+- Período coerente (inicio <= fim)
+- Existência de transações no período
+
+MENSAGENS:
+- "📊 EXTRATO {periodo}"
+- "Total Receitas: R$ {total_receitas}"
+- "Total Despesas: R$ {total_despesas}"
+- "Saldo do Período: R$ {saldo}"
+- "Nenhuma transação no período"
+
+EXIBIÇÃO:
+📅 EXTRATO JANEIRO/2024
+
+05/01/2024 - Salário - R$ 3.000,00 [+]
+08/01/2024 - Alimentação - R$ 150,00 [-]
+15/01/2024 - Transporte - R$ 89,50 [-]
+20/01/2024 - Freelance - R$ 500,00 [+]
+
+TOTAIS:
+Receitas: R$ 3.500,00 | Despesas: R$ 239,50 | Saldo: R$ 3.260,50

@@ -1,0 +1,42 @@
+SISTEMA: Controle Financeiro Pessoal
+EXERCÍCIO: 13 - Definir Meta Financeira
+DIFICULDADE: Intermediário
+
+DESCRIÇÃO:
+Implementar sistema de definição de metas financeiras.
+
+ENTIDADES ENVOLVIDAS:
+- Meta: id, descrição, valor_alvo, prazo, valor_atual, categoria
+
+OBJETIVO:
+Criar metas financeiras com prazo e acompanhamento.
+
+FLUXO PRINCIPAL:
+1. Solicitar: descrição, valor alvo, prazo, categoria
+2. Validar dados
+3. Calcular valor mensal necessário
+4. Criar meta com progresso zero
+5. Verificar viabilidade com base no histórico
+
+SUBTAREFAS:
+- Validar valor alvo positivo
+- Validar prazo futuro
+- Calcular poupança mensal necessária
+- Verificar média de economias do usuário
+- Sugerir ajustes se necessário
+
+MEMÓRIA:
+metas = []  # Lista de metas
+proximo_id = 1
+transacoes = []  # Para cálculo de viabilidade
+
+VALIDAÇÕES:
+- Valor alvo > 0
+- Prazo deve ser data futura
+- Descrição não vazia
+
+MENSAGENS:
+- "Meta criada com sucesso!"
+- "Você precisa economizar R$ {mensal} por mês"
+- "⚠️  Meta pode ser difícil baseado no seu histórico"
+- "✅ Meta viável! Você consegue!"
