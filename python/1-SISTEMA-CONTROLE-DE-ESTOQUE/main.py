@@ -3,7 +3,7 @@ import os
 import time
 from datetime import date
 
-estoque =[
+estoque = [
     {
         "codigo":"ce-001", 
         "nome": "cebola", 
