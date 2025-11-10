@@ -19,10 +19,11 @@ FLUXO PRINCIPAL:
 5. Confirmar cadastro bem-sucedido
 
 SUBTAREFAS:
-- Gerar ID automático sequencial
-- Validar preço (não pode ser negativo)
-- Validar quantidade (não pode ser negativa)
-- Verificar duplicidade de ISBN
+- Gerar ID automático sequencial - feito
+- Verificar duplicidade de ISBN - feito
+- Validar preço (não pode ser negativo) - feito
+- Validar quantidade (não pode ser negativa) - feito
+
 
 MEMÓRIA:
 livros = []  # Lista para armazenar os livros

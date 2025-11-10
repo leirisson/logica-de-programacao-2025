@@ -8,7 +8,7 @@ livros = [
         "autor": "Machado de Assis",
         "isbn": "978-85-273-0077-1",
         "preco": 45.90,
-        "quantidade_estoque": 32
+        "estoque": 32
     },
     {
         "id": 2,
@@ -16,7 +16,7 @@ livros = [
         "autor": "J.R.R. Tolkien",
         "isbn": "978-85-9508-320-5",
         "preco": 89.90,
-        "quantidade_estoque": 15
+        "estoque": 15
     },
     {
         "id": 3,
@@ -24,7 +24,7 @@ livros = [
         "autor": "George Orwell",
         "isbn": "978-85-359-1485-5",
         "preco": 52.00,
-        "quantidade_estoque": 27
+        "estoque": 27
     },
     {
         "id": 4,
@@ -32,7 +32,7 @@ livros = [
         "autor": "Antoine de Saint-Exupéry",
         "isbn": "978-85-9508-123-2",
         "preco": 29.90,
-        "quantidade_estoque": 50
+        "estoque": 50
     },
     {
         "id": 5,
@@ -40,7 +40,7 @@ livros = [
         "autor": "Paulo Coelho",
         "isbn": "978-85-7684-840-2",
         "preco": 39.90,
-        "quantidade_estoque": 41
+        "estoque": 41
     }
 ]
 
@@ -52,6 +52,9 @@ def carregar_sistema():
         print("INCIANDO O SISTEMA")
         print('='*i)
         time.sleep(.1)
+
+def pausar_sistema(tempo):
+    time.sleep(tempo)
 
 # função para limpar o terminal da aplicação
 def limpar_tela():
@@ -67,12 +70,130 @@ def menu_sistema(opcoes_menu):
     for i, indice in enumerate(opcoes_menu):
         print(indice)
 
+# função responsavel por cadastrar o livro
+def cadastrar_livro():
+    proximo_id = len(livros) + 1
+                # título, autor, ISBN, preço, quantidade_estoque
+    while True:
+        titulo = input("informe o titulo do livro: ")
+        if len(titulo) == 0:
+            print("O titulo é obrigatorio. Informe um titulo para o livro:")
+            continue
+        else:
+            break
+                    
+    while True:
+        autor = input("qual o nome do autor: ")
+        if len(autor) == 0:
+            print("O autor é obrigatorio. Informe um nome para o autor:")
+            continue
+        else:
+            break
+                                
+    while True:
+        isbn = input("qual o ISBN do livro: ").strip()
+        isbn_ja_existe = False
+        for lv in livros:
+            if lv["isbn"] == isbn or len(isbn) == 0 or len(isbn) <=10:
+                isbn_ja_existe = True
+                break
+            
+        if isbn_ja_existe:
+            print("ISBN já cadastrado ou em branco. Por favor, informe um ISBN válido (não repetido).")
+            print("ISBN deve ter pelo menos 10 caracteres")
+            print("ISBN deve ficar em branco")
+        else:
+            break
+                    
+    while True:
+            preco = float(input("qual o preço do livro: "))
+            estoque = int(input("quantidade: "))
+            if preco >= 0 and estoque >= 0:
+                break
+            else:
+                print("Preço e Estoque devem ser maior que zero")
+                    
+            
+    livro = {
+            "id":proximo_id,
+            "titulo": titulo,
+            "autor":autor,
+            "preco":preco,
+            "isbn": isbn,
+            "estoque":estoque
+        }
+        
+    
+    livros.append(livro)
+    print("livro cadastrado com sucesso !")
+
+#função responsavel pelo estoque
+def consultar_estoque():
+# 1. Solicitar termo de busca (título ou ISBN)
+    chave_pesquisa = input("informe o ISBN ou TITULO do livro: ").lower()
+    
+    livro_encontrado = False
+    
+    for livro in livros:
+        if(livro['isbn'] == chave_pesquisa or  livro['titulo'].lower() == chave_pesquisa ):
+            print(f"ID: {livro['id']}")
+            print(f"TÍTULO: {livro['titulo']}")
+            print(f"AUTOR: {livro['autor']}")
+            print(f"ISBN: {livro['isbn']}")
+            print(f"PREÇO: {livro['preco']}")
+            print(f"ESTOQUE: {livro['estoque']}")
+            livro_encontrado = True
+        elif len(chave_pesquisa) == 0:
+            print(f"ID: {livro['id']}")
+            print(f"TÍTULO: {livro['titulo']}")
+            print(f"AUTOR: {livro['autor']}")
+            print(f"ISBN: {livro['isbn']}")
+            print(f"PREÇO: {livro['preco']}")
+            print(f"ESTOQUE: {livro['estoque']}")
+            print("="*20)
+            livro_encontrado = True
+    if not livro_encontrado:
+        print("Livro não encontrado.")
+            
+# função responsavel por reposição no estoque
+def reposicao_estoque():
+    pass
+
+#função responsavel pela venda
+def vendas_livro():
+    pass
+
+# função responsavel pelos relatorios do sistema
+def relatorios_sistema():
+    pass
+
 # declarar as funções dentro do main 
 def main():
     carregar_sistema()
     limpar_tela()
-    titulo_sistema("SISTEMA: Controle de Estoque de Livros")
-    menu_sistema(['1 - Cadastro de Livros'])
+    
+    
+    while True:
+        titulo_sistema("SISTEMA: Controle de Estoque de Livros")
+        menu_sistema([
+            '1 - Cadastro de Livros 📚', 
+            '2 - Consultar Estoque 📦',
+            ])
+        op = input("escolha sua opção: ")
+        
+        match(op):
+            case "1":
+                cadastrar_livro()
+                limpar_tela()
+            case "2":
+                consultar_estoque()
+                input("digite qualquer tecla para continuar.")
+                pausar_sistema(1)
+                limpar_tela()
+            case _:
+                print("opção invalida.")
+                print("Escolha um opção valida.")
+                continue
     
 # responsavel por incializar o sistema
 if __name__ == "__main__":
