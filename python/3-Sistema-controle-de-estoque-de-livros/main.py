@@ -178,6 +178,10 @@ def main():
         menu_sistema([
             '1 - Cadastro de Livros 📚', 
             '2 - Consultar Estoque 📦',
+            '3 - Realizar Venda 🪙💵',
+            '4 - Reposição de Estoque em dev 📦🔁',
+            '5 - Relatório de Estoque Baixo  em dev 📜🧮',
+            '0 - Sair ⬇ 🚹🚺'
             ])
         op = input("escolha sua opção: ")
         
@@ -190,6 +194,8 @@ def main():
                 input("digite qualquer tecla para continuar.")
                 pausar_sistema(1)
                 limpar_tela()
+            case "0":
+                break
             case _:
                 print("opção invalida.")
                 print("Escolha um opção valida.")
