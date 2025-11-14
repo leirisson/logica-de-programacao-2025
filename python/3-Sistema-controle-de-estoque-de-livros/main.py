@@ -1,6 +1,6 @@
 import os, time
 
-# array de dicionarios:
+# lista de dicionarios:
 livros = [
     {
         "id": 1,
@@ -44,6 +44,8 @@ livros = [
     }
 ]
 
+# lista de livros vendidos 
+vendas = []
 # função para iniciar o carregamento da barra do sistema
 def carregar_sistema():
     tamanho_barra = len("INCIANDO O SISTEMA")
@@ -161,8 +163,18 @@ def reposicao_estoque():
 
 #função responsavel pela venda
 def vendas_livro():
-    pass
-
+    chave_buscar = input("informe o título ou o isbn do livro: ")
+    livroEncontrado = False
+    
+    for livro in livros:
+        if livro['isbn'] == chave_buscar or livro['titulo'].lower() == chave_buscar.lower():
+            quantidade = int(input("quantidade: "))
+            if(livro['estoque'] >= quantidade):
+                print("quantidade disponivel")
+            livroEncontrado = True
+    
+    if not livroEncontrado:
+        print("livro não encontrado")
 # função responsavel pelos relatorios do sistema
 def relatorios_sistema():
     pass
@@ -191,6 +203,11 @@ def main():
                 limpar_tela()
             case "2":
                 consultar_estoque()
+                input("digite qualquer tecla para continuar.")
+                pausar_sistema(1)
+                limpar_tela()
+            case "3":
+                vendas_livro()
                 input("digite qualquer tecla para continuar.")
                 pausar_sistema(1)
                 limpar_tela()
