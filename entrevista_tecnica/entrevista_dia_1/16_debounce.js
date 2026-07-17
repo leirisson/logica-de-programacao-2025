@@ -15,6 +15,14 @@
 
 function debounce(fn, delay) {
   // implemente aqui
+  let idDoTimeOut
+
+  return function () {
+    clearTimeout(idDoTimeOut)
+    idDoTimeOut = setTimeout(function () {
+      fn()
+    }, delay)
+  }
 }
 
 const logDebounced = debounce(() => console.log('executou!'), 300);

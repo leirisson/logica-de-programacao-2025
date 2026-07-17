@@ -15,10 +15,22 @@
 
 function removerDuplicadosManual(array) {
   // implemente aqui
+
+  let novoArray = []
+
+  for(let index=0; index < array.length; index++){
+    if(!novoArray.includes(array[index])){
+      novoArray.push(array[index])
+    } 
+  }
+
+  return novoArray
 }
 
 function removerDuplicadosComSet(array) {
   // implemente aqui
+  const valores = new Set(array)
+  return Array.from(valores)
 }
 
 console.log(removerDuplicadosManual([1, 2, 2, 3, 4, 4, 5]));

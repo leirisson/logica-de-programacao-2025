@@ -25,5 +25,9 @@ const copiaRasa = { ...original };
 // 2) cópia profunda
 // implemente uma forma de copiar `original` sem compartilhar a
 // referência do objeto aninhado `endereco`
+const copiaProfunda = {
+  ...copiaRasa,
+  endereco: {...original.endereco}
+}
 
 console.log(original);

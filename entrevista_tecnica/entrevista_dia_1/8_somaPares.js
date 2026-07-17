@@ -10,6 +10,9 @@
 
 function somaPares(numeros) {
   // implemente aqui
+  return numeros.reduce((acumulador, valorAtual) => {
+    return valorAtual % 2 === 0 ? acumulador + valorAtual : acumulador
+  }, 0)
 }
 
 console.log(somaPares([1, 2, 3, 4, 5, 6]));

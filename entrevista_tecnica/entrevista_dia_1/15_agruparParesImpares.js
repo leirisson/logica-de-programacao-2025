@@ -12,6 +12,20 @@
 
 function agruparParesImpares(numeros) {
   // implemente aqui
+  const mapa = new Map()
+  mapa.set('par', [])
+  mapa.set('impar', [])
+
+  for(let index = 0; index < numeros.length; index++){
+    if(numeros[index] % 2 == 0){
+       mapa.get('par').push(numeros[index])
+    } else {
+      mapa.get('impar').push(numeros[index])
+    }
+  }
+
+  return mapa
+
 }
 
 console.log(agruparParesImpares([1, 2, 3, 4, 5]));

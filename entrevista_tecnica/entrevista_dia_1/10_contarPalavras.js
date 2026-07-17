@@ -12,6 +12,20 @@
 
 function contarPalavras(frase) {
   // implemente aqui
+  let fraseNova = frase.split(" ")
+  const contagem = {}
+
+  for (let index = 0; index < fraseNova.length; index++) {
+    const palavra = fraseNova[index]
+
+    if (contagem[palavra]) {
+      contagem[palavra] += 1
+    } else {
+      contagem[palavra] = 1
+    }
+  }
+
+  return contagem
 }
 
 console.log(contarPalavras('o gato e o cachorro e o passaro'));

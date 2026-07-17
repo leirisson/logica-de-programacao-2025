@@ -17,6 +17,11 @@
 
 function criarContador() {
   // implemente aqui
+  let contador = 0
+  return function (){
+    contador++
+    return contador
+  }
 }
 
 const contar = criarContador();

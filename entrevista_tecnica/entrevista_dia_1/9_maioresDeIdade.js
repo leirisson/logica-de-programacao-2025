@@ -16,6 +16,11 @@
 
 function nomesMaioresDeIdade(pessoas) {
   // implemente aqui
+  return pessoas
+  .filter(pessoa => pessoa.idade >= 18)
+  .map(pessoa => pessoa.nome)
+  
+
 }
 
 console.log(nomesMaioresDeIdade([

@@ -11,7 +11,15 @@
 
 function menorValor(numeros) {
   // implemente aqui
+  let menor = numeros[0]
+  for(let n =0; n < numeros.length; n++){
+    if(numeros[n] < menor){
+      menor = numeros[n]
+    }
+  }
+
+  return menor
 }
 
-console.log(menorValor([3, 7, 2, 9, 4]));
-console.log(menorValor([-5, -1, -10]));
+console.log(menorValor([3, 7, 2, 1, 9, 4]));
+console.log(menorValor([-5, -1, -100]));

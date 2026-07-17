@@ -14,10 +14,15 @@
 
 interface Livro {
   // implemente aqui
+  id: number,
+  titulo: string,
+  autor: string,
+  estoque: number
 }
 
 function listarComEstoqueBaixo(livros: Livro[], limite: number): Livro[] {
   // implemente aqui
+  return livros.filter(l => l.estoque <= limite)
 }
 
 const livros: Livro[] = [

@@ -12,8 +12,19 @@
 
 function mesmosElementos(a, b) {
   // implemente aqui
+  if (a.length !== b.length) {
+    return false
+  } else {
+    for (index = 0; index < b.length; index++) {
+      if (!a.includes(b[index])) {
+        return false
+      }
+    }
+    return true
+  }
+
 }
 
-console.log(mesmosElementos([1, 2, 3], [3, 2, 1]));
+console.log(mesmosElementos([1, 2, 3, ], [3, 2, 1]));
 console.log(mesmosElementos([1, 2, 3], [1, 2, 4]));
 console.log(mesmosElementos([1, 2], [1, 2, 3]));

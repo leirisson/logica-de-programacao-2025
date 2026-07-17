@@ -24,20 +24,20 @@ Resolva em `entrevista_tecnica/modelo/` ou em arquivos `.js`/`.ts` novos. Sem co
 2. ✅ FizzBuzz de 1 a 100.
 3. ✅ Inverter uma string sem usar `.reverse()` ou `.split('').reverse().join('')` prontos — implementar na mão com loop.
 4. ✅ Verificar se uma string é palíndromo (ignorando espaços e maiúsculas/minúsculas).
-5. ⏳ Encontrar o maior valor de um array sem usar `Math.max`.
-6. ⏳ Encontrar o menor valor de um array sem usar `Math.min`.
-7. ⏳ Remover elementos duplicados de um array (implementação manual, depois refazer com `Set`).
-8. ⏳ Somar todos os números pares de um array usando `reduce`.
-9. ⏳ Dado um array de objetos `{ nome, idade }`, retornar só os nomes das pessoas maiores de idade usando `filter` + `map`.
-10. ⏳ Contar quantas vezes cada palavra aparece em uma frase (retornar um objeto `{ palavra: contagem }`).
-11. ⏳ Implementar uma função `soma(a, b)` e explicar em voz alta a diferença entre declará-la como `function soma(a, b) {}` e `const soma = (a, b) => {}`.
-12. ⏳ Escrever uma closure: uma função `criarContador()` que retorna outra função que incrementa e retorna um contador interno a cada chamada.
-13. ⏳ Verificar se dois arrays têm os mesmos elementos, independente da ordem.
-14. ⏳ Implementar `achatar(array)` que transforma um array de arrays (`[[1,2],[3,4]]`) em um array simples (`[1,2,3,4]`), sem usar `.flat()`.
-15. ⏳ Dado um array de números, agrupar em pares e ímpares usando `Map` (`Map<'par'|'impar', number[]>`).
-16. ⏳ Escrever uma função `debounce(fn, delay)` simplificada (não precisa ser perfeita, o objetivo é entender o conceito).
-17. ⏳ Converter um array de objetos para TypeScript: criar uma `interface Livro { id: number; titulo: string; autor: string; estoque: number }` e tipar uma função `listarComEstoqueBaixo(livros: Livro[], limite: number): Livro[]`.
-18. ⏳ Explicar e demonstrar em código a diferença entre cópia rasa (`shallow copy`, ex: spread `{...obj}`) e cópia profunda de um objeto aninhado.
+5. ✅ Encontrar o maior valor de um array sem usar `Math.max`.
+6. ✅ Encontrar o menor valor de um array sem usar `Math.min`.
+7. ✅ Remover elementos duplicados de um array (implementação manual, depois refazer com `Set`).
+8. ✅ Somar todos os números pares de um array usando `reduce`.
+9. ✅ Dado um array de objetos `{ nome, idade }`, retornar só os nomes das pessoas maiores de idade usando `filter` + `map`.
+10. ✅ Contar quantas vezes cada palavra aparece em uma frase (retornar um objeto `{ palavra: contagem }`).
+11. ⏳ Implementar uma função `soma(a, b)` e explicar em voz alta a diferença entre declará-la como `function soma(a, b) {}` e `const soma = (a, b) => {}`. (código pronto — falta escrever a explicação com as próprias palavras no comentário)
+12. ✅ Escrever uma closure: uma função `criarContador()` que retorna outra função que incrementa e retorna um contador interno a cada chamada.
+13. ✅ Verificar se dois arrays têm os mesmos elementos, independente da ordem.
+14. ✅ Implementar `achatar(array)` que transforma um array de arrays (`[[1,2],[3,4]]`) em um array simples (`[1,2,3,4]`), sem usar `.flat()`.
+15. ✅ Dado um array de números, agrupar em pares e ímpares usando `Map` (`Map<'par'|'impar', number[]>`).
+16. ✅ Escrever uma função `debounce(fn, delay)` simplificada (não precisa ser perfeita, o objetivo é entender o conceito).
+17. ✅ Converter um array de objetos para TypeScript: criar uma `interface Livro { id: number; titulo: string; autor: string; estoque: number }` e tipar uma função `listarComEstoqueBaixo(livros: Livro[], limite: number): Livro[]`.
+18. ✅ Explicar e demonstrar em código a diferença entre cópia rasa (`shallow copy`, ex: spread `{...obj}`) e cópia profunda de um objeto aninhado.
 19. ⏳ Implementar uma busca binária simples em um array ordenado (praticar O(log n) e saber explicar por que é mais rápido que busca linear).
 20. ⏳ Implementar uma função recursiva de fatorial e outra de Fibonacci; explicar o caso base de cada uma.
 
@@ -55,4 +55,14 @@ Resolva em `entrevista_tecnica/modelo/` ou em arquivos `.js`/`.ts` novos. Sem co
 
 | Exercício | Dúvida | Resolvido? |
 |-----------|--------|------------|
-| | | |
+| 5 | `maior` sendo sobrescrito a cada iteração em vez de comparado; ponto de partida `0` quebrava com arrays negativos | ✅ |
+| 7 | Comparação errada por índice (`array[index] !== novoArray[index]`) em vez de checar existência com `.includes()`; faltava `return` | ✅ |
+| 8 | Resolvido com `for` em vez de `reduce`, que era o pedido do exercício | ✅ |
+| 9 | `filter` usado com efeito colateral (`push`) em vez de retornar booleano; `map` inútil (`pessoa => pessoa`) | ✅ |
+| 10 | Primeira vez usando objeto como "contador por chave" — dúvida em como estruturar o acumulador | ✅ |
+| 11 | Falta escrever a explicação de hoisting / `this` / uso como método com as próprias palavras | ⏳ |
+| 13 | `if (a.includes(...))` sem ação nenhuma dentro; depois faltou a checagem de `a.length !== b.length` (dava falso `true` com tamanhos diferentes) | ✅ |
+| 14 | Aplicou remoção de duplicados (`.includes`) por engano — achatar não deve remover duplicados | ✅ |
+| 16 | Primeira vez com `setTimeout`/`clearTimeout` — faltava cancelar o timeout anterior antes de agendar um novo | ✅ |
+| 17 | Usou `5` fixo no `filter` em vez do parâmetro `limite` | ✅ |
+| 18 | Conceito de cópia por referência vs por valor em objetos aninhados — primeira vez lidando com o tema | ✅ |
