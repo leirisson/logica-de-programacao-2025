@@ -10,6 +10,8 @@ Use `api_node_com_TDD/regras_TDD_Estudos.md` como referência de ciclo RED → G
 
 ## Teoria (checklist)
 
+> Explicações completas de cada item: [TEORIA_node_rest_tdd.md](TEORIA_node_rest_tdd.md)
+
 - [ ] O que é Node.js, event loop (não precisa aprofundar internals, mas saber explicar que é single-threaded com I/O não-bloqueante).
 - [ ] REST: verbos HTTP (GET/POST/PUT/PATCH/DELETE), status codes (200, 201, 400, 401, 403, 404, 500), idempotência.
 - [ ] Estrutura de uma API Express: rotas, middlewares, tratamento de erros.
